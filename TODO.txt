@@ -3,7 +3,7 @@ Faire l'énergie/munitions display Yannus
 Les inputs pour tirer: Stagiaire
 Faire des armes complémentaires: Stagiaire 
 Faire un mode de jeu avec des team /ou des points CHECK
-Faire des objets en plus(chnager la vitesse l'inertie, l'accélaration)
+Faire des objets en plus(chnager la vitesse l'inertie, l'accélération)
 bruit de piew piew
 Invincibilité du spotdodge CHECK
 Connection depuis le menu (find session, create session exec open + addresse)
