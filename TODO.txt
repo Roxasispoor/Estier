@@ -10,11 +10,11 @@ Connection depuis le menu (find session, create session exec open + addresse)
 Faire des loopings CHECK
 Gérer le spawnkill (on met une invincibilité de 3 secondes, c'est le plus facile et fair) 
 Bonus de kill streak?
-Mettre des couleurs de drones
+Mettre des couleurs de drones CHECK
 Désactiver le tir ami
 Faire les barres de vie ennemie 
 Différentes maps au moins une bonne
-Mini-Map
+Mini-Map FHECK
 Différents Mode : solo,capture the node kills,temps,orbes,Bounty
 Rétrocaméra CHECK
 Collision avec décor?
