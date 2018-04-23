@@ -8,7 +8,6 @@ bruit de piew piew
 Invincibilité du spotdodge CHECK
 Connection depuis le menu (find session, create session exec open + addresse)
 Faire des loopings CHECK
-Gérer le spawnkill (on met une invincibilité de 3 secondes, c'est le plus facile et fair et on tp)
 Bonus de kill streak
 KDA checked
 Mettre des couleurs de drones CHECK
@@ -20,3 +19,9 @@ Différents Mode : solo,capture the node kills,temps,orbes,Bounty
 Rétrocaméra CHECK
 Collision avec décor?
 Viseur
+
+
+Faire mode solo.
+Gérer le spawnkill (on met une invincibilité de 3 secondes, c'est le plus facile et fair et on tp)
+Vie de l'ennemi
+Revoir couleur mesh au bon moment
