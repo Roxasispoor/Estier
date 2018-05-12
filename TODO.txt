@@ -15,13 +15,13 @@ Désactiver le tir ami CHECKED
 Faire les barres de vie ennemie 
 Différentes maps au moins une bonne
 Mini-Map CHECK
-Différents Mode : solo,capture the node kills,temps,orbes,Bounty
+Différents Mode : solo,capture the node CHeck kills,temps,orbes,Bounty
 Rétrocaméra CHECK
 Collision avec décor?
 Viseur
 
 
 Faire mode solo.
-Gérer le spawnkill (on met une invincibilité de 3 secondes, c'est le plus facile et fair et on tp)
+Gérer le spawnkill (on met une invincibilité de 3 secondes, c'est le plus facile et fair et on tp) Check
 Vie de l'ennemi
 Revoir couleur mesh au bon moment
