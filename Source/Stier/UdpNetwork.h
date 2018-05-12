@@ -32,7 +32,7 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void BPEvent_RoomReceived(const struct FRoom &receivedData);
 	UFUNCTION(BlueprintImplementableEvent)
-		void BPEvent_RoomDecompReceived(const FString &nom,const int32 ips,const int32& playersMax,const int32& place);
+		void BPEvent_RoomDecompReceived(const FString &nom,const int32 & ips,const int32& playersMax,const int32& place);
 
 
 
