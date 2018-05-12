@@ -6,9 +6,9 @@
 /NAME:"UE4Editor-UE4Duino.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
-"A:\Libraries\Documents\Dev\Unreal Projects\UE4DuinoDev\Plugins\UE4Duino\Intermediate\Build\Win64\UE4Editor\Development\UE4Duino\Module.UE4Duino.cpp.obj"
-"A:\Libraries\Documents\Dev\Unreal Projects\UE4DuinoDev\Plugins\UE4Duino\Intermediate\Build\Win64\UE4Editor\Development\UE4Duino\Module.UE4Duino.gen.cpp.obj"
-"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\UE4Duino\PCLaunch.rc.res"
-"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
-/OUT:"A:\Libraries\Documents\Dev\Unreal Projects\UE4DuinoDev\Plugins\UE4Duino\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-UE4Duino.lib"
+"E:\Program Files\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\4223\Documents\Unreal Projects\stier\Plugins\UE4Duino\Intermediate\Build\Win64\UE4Editor\Development\UE4Duino\Module.UE4Duino.cpp.obj"
+"C:\Users\4223\Documents\Unreal Projects\stier\Plugins\UE4Duino\Intermediate\Build\Win64\UE4Editor\Development\UE4Duino\Module.UE4Duino.gen.cpp.obj"
+"E:\Program Files\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\UE4Duino\PCLaunch.rc.res"
+"E:\Program Files\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"C:\Users\4223\Documents\Unreal Projects\stier\Plugins\UE4Duino\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-UE4Duino.lib"

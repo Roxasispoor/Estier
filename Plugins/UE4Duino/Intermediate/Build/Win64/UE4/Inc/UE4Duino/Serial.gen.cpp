@@ -6,7 +6,6 @@
 
 #include "GeneratedCppIncludes.h"
 #include "Private/Serial.h"
-PRAGMA_DISABLE_OPTIMIZATION
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -16,8 +15,10 @@ void EmptyLinkFunctionForGeneratedCodeSerial() {}
 // Cross Module References
 	UE4DUINO_API UEnum* Z_Construct_UEnum_UE4Duino_ELineEnd();
 	UPackage* Z_Construct_UPackage__Script_UE4Duino();
-	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_BytesToFloat();
+	UE4DUINO_API UClass* Z_Construct_UClass_USerial_NoRegister();
 	UE4DUINO_API UClass* Z_Construct_UClass_USerial();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
+	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_BytesToFloat();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_BytesToInt();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_Close();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_FloatToBytes();
@@ -29,7 +30,6 @@ void EmptyLinkFunctionForGeneratedCodeSerial() {}
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_LineEndToStr();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_Open();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_OpenComPort();
-	UE4DUINO_API UClass* Z_Construct_UClass_USerial_NoRegister();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_Print();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_Println();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_ReadByte();
@@ -42,52 +42,65 @@ void EmptyLinkFunctionForGeneratedCodeSerial() {}
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_WriteBytes();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_WriteFloat();
 	UE4DUINO_API UFunction* Z_Construct_UFunction_USerial_WriteInt();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 // End Cross Module References
-static UEnum* ELineEnd_StaticEnum()
-{
-	static UEnum* Singleton = nullptr;
-	if (!Singleton)
+	static UEnum* ELineEnd_StaticEnum()
 	{
-		Singleton = GetStaticEnum(Z_Construct_UEnum_UE4Duino_ELineEnd, Z_Construct_UPackage__Script_UE4Duino(), TEXT("ELineEnd"));
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_UE4Duino_ELineEnd, Z_Construct_UPackage__Script_UE4Duino(), TEXT("ELineEnd"));
+		}
+		return Singleton;
 	}
-	return Singleton;
-}
-static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_StaticEnum, TEXT("/Script/UE4Duino"), TEXT("ELineEnd"), false, nullptr, nullptr);
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_StaticEnum, TEXT("/Script/UE4Duino"), TEXT("ELineEnd"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_UE4Duino_ELineEnd_CRC() { return 265302517U; }
 	UEnum* Z_Construct_UEnum_UE4Duino_ELineEnd()
 	{
+#if WITH_HOT_RELOAD
 		UPackage* Outer = Z_Construct_UPackage__Script_UE4Duino();
-		extern uint32 Get_Z_Construct_UEnum_UE4Duino_ELineEnd_CRC();
 		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("ELineEnd"), 0, Get_Z_Construct_UEnum_UE4Duino_ELineEnd_CRC(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
 		if (!ReturnEnum)
 		{
-			ReturnEnum = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ELineEnd"), RF_Public|RF_Transient|RF_MarkAsNative) UEnum(FObjectInitializer());
-			TArray<TPair<FName, int64>> EnumNames;
-			EnumNames.Emplace(TEXT("ELineEnd::rn"), 0);
-			EnumNames.Emplace(TEXT("ELineEnd::n"), 1);
-			EnumNames.Emplace(TEXT("ELineEnd::r"), 2);
-			EnumNames.Emplace(TEXT("ELineEnd::nr"), 3);
-			EnumNames.Emplace(TEXT("ELineEnd::ELineEnd_MAX"), 4);
-			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
-			ReturnEnum->CppType = TEXT("ELineEnd");
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "ELineEnd::rn", (int64)ELineEnd::rn },
+				{ "ELineEnd::n", (int64)ELineEnd::n },
+				{ "ELineEnd::r", (int64)ELineEnd::r },
+				{ "ELineEnd::nr", (int64)ELineEnd::nr },
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnEnum->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnEnum, TEXT("BlueprintType"), TEXT("true"));
-			MetaData->SetValue(ReturnEnum, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnEnum, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnEnum, TEXT("n.DisplayName"), TEXT("\\n"));
-			MetaData->SetValue(ReturnEnum, TEXT("nr.DisplayName"), TEXT("\\n\\r"));
-			MetaData->SetValue(ReturnEnum, TEXT("r.DisplayName"), TEXT("\\r"));
-			MetaData->SetValue(ReturnEnum, TEXT("rn.DisplayName"), TEXT("\\r\\n"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "BlueprintType", "true" },
+				{ "Category", "UE4Duino" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "n.DisplayName", "\\n" },
+				{ "nr.DisplayName", "\\n\\r" },
+				{ "r.DisplayName", "\\r" },
+				{ "rn.DisplayName", "\\r\\n" },
+			};
 #endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_UE4Duino,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				"ELineEnd",
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				nullptr,
+				(uint8)UEnum::ECppForm::EnumClass,
+				"ELineEnd",
+				Enumerators,
+				ARRAY_COUNT(Enumerators),
+				METADATA_PARAMS(Enum_MetaDataParams, ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
 		}
 		return ReturnEnum;
 	}
-	uint32 Get_Z_Construct_UEnum_UE4Duino_ELineEnd_CRC() { return 38051570U; }
 	void USerial::StaticRegisterNativesUSerial()
 	{
 		UClass* Class = USerial::StaticClass();
-		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
+		static const FNameNativePtrPair Funcs[] = {
 			{ "BytesToFloat", (Native)&USerial::execBytesToFloat },
 			{ "BytesToInt", (Native)&USerial::execBytesToInt },
 			{ "Close", (Native)&USerial::execClose },
@@ -113,7 +126,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			{ "WriteFloat", (Native)&USerial::execWriteFloat },
 			{ "WriteInt", (Native)&USerial::execWriteInt },
 		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
 	UFunction* Z_Construct_UFunction_USerial_BytesToFloat()
 	{
@@ -122,24 +135,28 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			TArray<uint8> Bytes;
 			float ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("BytesToFloat"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14022401, 65535, sizeof(Serial_eventBytesToFloat_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventBytesToFloat_Parms), 0x0010000000000580);
-			UProperty* NewProp_Bytes = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Bytes"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(Bytes, Serial_eventBytesToFloat_Parms), 0x0010000000000080);
-			UProperty* NewProp_Bytes_Inner = new(EC_InternalUseOnlyConstructor, NewProp_Bytes, TEXT("Bytes"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Float, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventBytesToFloat_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Bytes = { UE4CodeGen_Private::EPropertyClass::Array, "Bytes", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventBytesToFloat_Parms, Bytes), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_Bytes_Inner = { UE4CodeGen_Private::EPropertyClass::Byte, "Bytes", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Bytes,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Bytes_Inner,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Bytes to Float"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("cast concatenate group bit bitwise"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Utility function to convert 4 bytes into a float. If the input array's length is not 4, returns 0.0.\n\n@param Bytes A byte array with 4 values representing the float in IEEE 754 standard format.\n@return The final float value or 0.0 for an invalid array."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Bytes to Float" },
+				{ "Keywords", "cast concatenate group bit bitwise" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Utility function to convert 4 bytes into a float. If the input array's length is not 4, returns 0.0.\n\n@param Bytes A byte array with 4 values representing the float in IEEE 754 standard format.\n@return The final float value or 0.0 for an invalid array." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "BytesToFloat", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14022401, sizeof(Serial_eventBytesToFloat_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -150,44 +167,47 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			TArray<uint8> Bytes;
 			int32 ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("BytesToInt"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14022401, 65535, sizeof(Serial_eventBytesToInt_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventBytesToInt_Parms), 0x0010000000000580);
-			UProperty* NewProp_Bytes = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Bytes"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(Bytes, Serial_eventBytesToInt_Parms), 0x0010000000000080);
-			UProperty* NewProp_Bytes_Inner = new(EC_InternalUseOnlyConstructor, NewProp_Bytes, TEXT("Bytes"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Int, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventBytesToInt_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Bytes = { UE4CodeGen_Private::EPropertyClass::Array, "Bytes", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventBytesToInt_Parms, Bytes), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_Bytes_Inner = { UE4CodeGen_Private::EPropertyClass::Byte, "Bytes", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Bytes,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Bytes_Inner,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Bytes to Int"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("cast concatenate group bit bitwise"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Utility function to convert 4 bytes into an Integer. If the input array's length is not 4, returns 0.\n\n@param Bytes A byte array with 4 values representing the integer in little-endian format.\n@return The final integer value or 0 for an invalid array."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Bytes to Int" },
+				{ "Keywords", "cast concatenate group bit bitwise" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Utility function to convert 4 bytes into an Integer. If the input array's length is not 4, returns 0.\n\n@param Bytes A byte array with 4 values representing the integer in little-endian format.\n@return The final integer value or 0 for an invalid array." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "BytesToInt", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14022401, sizeof(Serial_eventBytesToInt_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
 	UFunction* Z_Construct_UFunction_USerial_Close()
 	{
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Close"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Close Port"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("com end finish release"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Close and end the communication with the serial port. If not open, do nothing."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Close Port" },
+				{ "Keywords", "com end finish release" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Close and end the communication with the serial port. If not open, do nothing." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "Close", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -198,44 +218,51 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			float Float;
 			TArray<uint8> ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("FloatToBytes"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14422401, 65535, sizeof(Serial_eventFloatToBytes_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventFloatToBytes_Parms), 0x0010000000000580);
-			UProperty* NewProp_ReturnValue_Inner = new(EC_InternalUseOnlyConstructor, NewProp_ReturnValue, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			UProperty* NewProp_Float = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Float"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(Float, Serial_eventFloatToBytes_Parms), 0x0010000008000182);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Array, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventFloatToBytes_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Inner = { UE4CodeGen_Private::EPropertyClass::Byte, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Float to Bytes"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("cast separate bit bitwise"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Utility function to get the 4 bytes that make a float.\n\n@param Float The float value to be converted.\n@return A byte array containing the 4 bytes that make the float, in IEEE 754 standard format."));
-			MetaData->SetValue(NewProp_Float, TEXT("NativeConst"), TEXT(""));
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Float_MetaData[] = {
+				{ "NativeConst", "" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Float = { UE4CodeGen_Private::EPropertyClass::Float, "Float", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000008000182, 1, nullptr, STRUCT_OFFSET(Serial_eventFloatToBytes_Parms, Float), METADATA_PARAMS(NewProp_Float_MetaData, ARRAY_COUNT(NewProp_Float_MetaData)) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue_Inner,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Float,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Float to Bytes" },
+				{ "Keywords", "cast separate bit bitwise" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Utility function to get the 4 bytes that make a float.\n\n@param Float The float value to be converted.\n@return A byte array containing the 4 bytes that make the float, in IEEE 754 standard format." },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "FloatToBytes", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14422401, sizeof(Serial_eventFloatToBytes_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
 	UFunction* Z_Construct_UFunction_USerial_Flush()
 	{
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Flush"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Flush Port"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Clean the serial port by reading everything left to be read."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Flush Port" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Clean the serial port by reading everything left to be read." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "Flush", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -245,21 +272,23 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 		{
 			int32 ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetBaud"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14020401, 65535, sizeof(Serial_eventGetBaud_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventGetBaud_Parms), 0x0010000000000580);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Int, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventGetBaud_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Get Baud Rate"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Read the selected BaudRate for this Serial instance.\n@return The baud rate."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Get Baud Rate" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Read the selected BaudRate for this Serial instance.\n@return The baud rate." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "GetBaud", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14020401, sizeof(Serial_eventGetBaud_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -269,21 +298,23 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 		{
 			int32 ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetPort"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14020401, 65535, sizeof(Serial_eventGetPort_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventGetPort_Parms), 0x0010000000000580);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Int, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventGetPort_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Get Port Number"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Read the number of the serial port selected for this Serial instance.\n@return The number of the serial port."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Get Port Number" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Read the number of the serial port selected for this Serial instance.\n@return The number of the serial port." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "GetPort", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14020401, sizeof(Serial_eventGetPort_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -294,25 +325,33 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			int32 Int;
 			TArray<uint8> ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("IntToBytes"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14422401, 65535, sizeof(Serial_eventIntToBytes_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventIntToBytes_Parms), 0x0010000000000580);
-			UProperty* NewProp_ReturnValue_Inner = new(EC_InternalUseOnlyConstructor, NewProp_ReturnValue, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			UProperty* NewProp_Int = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Int"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Int, Serial_eventIntToBytes_Parms), 0x0010000008000182);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Array, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventIntToBytes_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Inner = { UE4CodeGen_Private::EPropertyClass::Byte, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Int to Bytes"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("cast separate bit bitwise"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Utility function to get the 4 bytes that make an integer.\n\n@param Int The integer value to be converted.\n@return A byte array containing the 4 bytes that make the integer, starting from the least significant one (little endian)."));
-			MetaData->SetValue(NewProp_Int, TEXT("NativeConst"), TEXT(""));
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Int_MetaData[] = {
+				{ "NativeConst", "" },
+			};
 #endif
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_Int = { UE4CodeGen_Private::EPropertyClass::Int, "Int", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000008000182, 1, nullptr, STRUCT_OFFSET(Serial_eventIntToBytes_Parms, Int), METADATA_PARAMS(NewProp_Int_MetaData, ARRAY_COUNT(NewProp_Int_MetaData)) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue_Inner,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Int,
+			};
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Int to Bytes" },
+				{ "Keywords", "cast separate bit bitwise" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Utility function to get the 4 bytes that make an integer.\n\n@param Int The integer value to be converted.\n@return A byte array containing the 4 bytes that make the integer, starting from the least significant one (little endian)." },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "IntToBytes", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14422401, sizeof(Serial_eventIntToBytes_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -322,22 +361,24 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 		{
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("IsOpened"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x14020401, 65535, sizeof(Serial_eventIsOpened_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventIsOpened_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventIsOpened_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventIsOpened_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventIsOpened_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventIsOpened_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Is Port Open"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Check if the serial port is open.\n@return True if the serial port is open."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Is Port Open" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Check if the serial port is open.\n@return True if the serial port is open." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "IsOpened", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x14020401, sizeof(Serial_eventIsOpened_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -348,24 +389,28 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			ELineEnd LineEnd;
 			FString ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("LineEndToStr"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventLineEndToStr_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventLineEndToStr_Parms), 0x0010000000000580);
-			UProperty* NewProp_LineEnd = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("LineEnd"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(LineEnd, Serial_eventLineEndToStr_Parms), 0x0010000000000080, Z_Construct_UEnum_UE4Duino_ELineEnd());
-			UProperty* NewProp_LineEnd_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_LineEnd, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Str, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventLineEndToStr_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FEnumPropertyParams NewProp_LineEnd = { UE4CodeGen_Private::EPropertyClass::Enum, "LineEnd", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventLineEndToStr_Parms, LineEnd), Z_Construct_UEnum_UE4Duino_ELineEnd, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_LineEnd_Underlying = { UE4CodeGen_Private::EPropertyClass::Byte, "UnderlyingType", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_LineEnd,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_LineEnd_Underlying,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Line End to String"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("cast convert"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Converts a LineEnd enum value to String.\n@param LineEnd LineEnd enum value.\n@return The LineEnd value in string format."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Line End to String" },
+				{ "keywords", "cast convert" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Converts a LineEnd enum value to String.\n@param LineEnd LineEnd enum value.\n@return The LineEnd value in string format." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "LineEndToStr", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventLineEndToStr_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -377,27 +422,31 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			int32 BaudRate;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Open"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventOpen_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventOpen_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventOpen_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventOpen_Parms), sizeof(bool), true);
-			UProperty* NewProp_BaudRate = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("BaudRate"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(BaudRate, Serial_eventOpen_Parms), 0x0010000000000080);
-			UProperty* NewProp_Port = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Port"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Port, Serial_eventOpen_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventOpen_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventOpen_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_BaudRate = { UE4CodeGen_Private::EPropertyClass::Int, "BaudRate", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventOpen_Parms, BaudRate), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_Port = { UE4CodeGen_Private::EPropertyClass::Int, "Port", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventOpen_Parms, Port), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_BaudRate,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Port,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("CPP_Default_BaudRate"), TEXT("9600"));
-			MetaData->SetValue(ReturnFunction, TEXT("CPP_Default_Port"), TEXT("2"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Open Port"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("com start init"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Open a serial port. Don't forget to close the port before exiting the game.\nIf this Serial instance has already an opened port,\nreturn false and doesn't change the opened port number.\n\n@param Port The serial port to open.\n@param BaudRate BaudRate to open the serial port with.\n@return If the serial port was successfully opened."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "CPP_Default_BaudRate", "9600" },
+				{ "CPP_Default_Port", "2" },
+				{ "DisplayName", "Open Port" },
+				{ "Keywords", "com start init" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Open a serial port. Don't forget to close the port before exiting the game.\nIf this Serial instance has already an opened port,\nreturn false and doesn't change the opened port number.\n\n@param Port The serial port to open.\n@param BaudRate BaudRate to open the serial port with.\n@return If the serial port was successfully opened." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "Open", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventOpen_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -410,28 +459,33 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			int32 BaudRate;
 			USerial* ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OpenComPort"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04422401, 65535, sizeof(Serial_eventOpenComPort_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventOpenComPort_Parms), 0x0010000000000580, Z_Construct_UClass_USerial_NoRegister());
-			UProperty* NewProp_BaudRate = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("BaudRate"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(BaudRate, Serial_eventOpenComPort_Parms), 0x0010000000000080);
-			UProperty* NewProp_Port = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Port"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Port, Serial_eventOpenComPort_Parms), 0x0010000000000080);
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bOpened, Serial_eventOpenComPort_Parms);
-			UProperty* NewProp_bOpened = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bOpened"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bOpened, Serial_eventOpenComPort_Parms), 0x0010000000000180, CPP_BOOL_PROPERTY_BITMASK(bOpened, Serial_eventOpenComPort_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventOpenComPort_Parms, ReturnValue), Z_Construct_UClass_USerial_NoRegister, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_BaudRate = { UE4CodeGen_Private::EPropertyClass::Int, "BaudRate", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventOpenComPort_Parms, BaudRate), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_Port = { UE4CodeGen_Private::EPropertyClass::Int, "Port", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventOpenComPort_Parms, Port), METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_bOpened_SetBit = [](void* Obj){ ((Serial_eventOpenComPort_Parms*)Obj)->bOpened = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bOpened = { UE4CodeGen_Private::EPropertyClass::Bool, "bOpened", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventOpenComPort_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bOpened_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_BaudRate,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Port,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bOpened,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("CPP_Default_BaudRate"), TEXT("9600"));
-			MetaData->SetValue(ReturnFunction, TEXT("CPP_Default_Port"), TEXT("1"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Open Serial Port"));
-			MetaData->SetValue(ReturnFunction, TEXT("Keywords"), TEXT("com arduino serial start"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Open a serial port and return the created Serial instance.\nDon't forget to close the port before exiting the game.\n\n@param bOpened If the serial port was successfully opened.\n@param Port The serial port to open.\n@param BaudRate BaudRate to open the serial port with.\n@return A Serial instance to work with the opened port."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "CPP_Default_BaudRate", "9600" },
+				{ "CPP_Default_Port", "1" },
+				{ "DisplayName", "Open Serial Port" },
+				{ "Keywords", "com arduino serial start" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Open a serial port and return the created Serial instance.\nDon't forget to close the port before exiting the game.\n\n@param bOpened If the serial port was successfully opened.\n@param Port The serial port to open.\n@param BaudRate BaudRate to open the serial port with.\n@return A Serial instance to work with the opened port." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "OpenComPort", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04422401, sizeof(Serial_eventOpenComPort_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -442,24 +496,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			FString String;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Print"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventPrint_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventPrint_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventPrint_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventPrint_Parms), sizeof(bool), true);
-			UProperty* NewProp_String = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("String"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(String, Serial_eventPrint_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventPrint_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventPrint_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FStrPropertyParams NewProp_String = { UE4CodeGen_Private::EPropertyClass::Str, "String", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventPrint_Parms, String), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_String,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Print"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("send write string words text characters"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Writes a string without newline to the serial port.\n@param String The string to be sent to the serial port.\n@return True if the string was sent."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Print" },
+				{ "keywords", "send write string words text characters" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Writes a string without newline to the serial port.\n@param String The string to be sent to the serial port.\n@return True if the string was sent." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "Print", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventPrint_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -470,24 +527,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			FString String;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Println"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventPrintln_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventPrintln_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventPrintln_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventPrintln_Parms), sizeof(bool), true);
-			UProperty* NewProp_String = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("String"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(String, Serial_eventPrintln_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventPrintln_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventPrintln_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FStrPropertyParams NewProp_String = { UE4CodeGen_Private::EPropertyClass::Str, "String", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventPrintln_Parms, String), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_String,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Print Line"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("send write string words text characters"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Writes a string with newline (\\n) appended at the end to the serial port.\n@param String The string to be sent to the serial port.\n@return True if the string was sent."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Print Line" },
+				{ "keywords", "send write string words text characters" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Writes a string with newline (\\n) appended at the end to the serial port.\n@param String The string to be sent to the serial port.\n@return True if the string was sent." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "Println", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventPrintln_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -498,24 +558,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			bool bSuccess;
 			uint8 ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReadByte"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04420401, 65535, sizeof(Serial_eventReadByte_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventReadByte_Parms), 0x0010000000000580);
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bSuccess, Serial_eventReadByte_Parms);
-			UProperty* NewProp_bSuccess = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bSuccess"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bSuccess, Serial_eventReadByte_Parms), 0x0010000000000180, CPP_BOOL_PROPERTY_BITMASK(bSuccess, Serial_eventReadByte_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Byte, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventReadByte_Parms, ReturnValue), nullptr, METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_bSuccess_SetBit = [](void* Obj){ ((Serial_eventReadByte_Parms*)Obj)->bSuccess = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bSuccess = { UE4CodeGen_Private::EPropertyClass::Bool, "bSuccess", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventReadByte_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bSuccess_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bSuccess,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Read a Byte"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("get read receive"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Reads a byte from the serial port.\n@param bSuccess True if there were 4 bytes to read.\n@return The read value"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Read a Byte" },
+				{ "keywords", "get read receive" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Reads a byte from the serial port.\n@param bSuccess True if there were 4 bytes to read.\n@return The read value" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "ReadByte", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04420401, sizeof(Serial_eventReadByte_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -526,25 +589,29 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			int32 Limit;
 			TArray<uint8> ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReadBytes"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventReadBytes_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventReadBytes_Parms), 0x0010000000000580);
-			UProperty* NewProp_ReturnValue_Inner = new(EC_InternalUseOnlyConstructor, NewProp_ReturnValue, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			UProperty* NewProp_Limit = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Limit"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Limit, Serial_eventReadBytes_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Array, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventReadBytes_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Inner = { UE4CodeGen_Private::EPropertyClass::Byte, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_Limit = { UE4CodeGen_Private::EPropertyClass::Int, "Limit", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventReadBytes_Parms, Limit), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue_Inner,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Limit,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("CPP_Default_Limit"), TEXT("256"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Read Bytes"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("get read receive"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Reads up to Limit bytes from the serial port. If there are less than Limit,\nreads all of them and return True.\n@param bSuccess True if there was at least 1 byte to read.\n@return An array containing the read bytes"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "CPP_Default_Limit", "256" },
+				{ "DisplayName", "Read Bytes" },
+				{ "keywords", "get read receive" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Reads up to Limit bytes from the serial port. If there are less than Limit,\nreads all of them and return True.\n@param bSuccess True if there was at least 1 byte to read.\n@return An array containing the read bytes" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "ReadBytes", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventReadBytes_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -555,24 +622,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			bool bSuccess;
 			float ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReadFloat"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04420401, 65535, sizeof(Serial_eventReadFloat_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventReadFloat_Parms), 0x0010000000000580);
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bSuccess, Serial_eventReadFloat_Parms);
-			UProperty* NewProp_bSuccess = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bSuccess"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bSuccess, Serial_eventReadFloat_Parms), 0x0010000000000180, CPP_BOOL_PROPERTY_BITMASK(bSuccess, Serial_eventReadFloat_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Float, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventReadFloat_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_bSuccess_SetBit = [](void* Obj){ ((Serial_eventReadFloat_Parms*)Obj)->bSuccess = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bSuccess = { UE4CodeGen_Private::EPropertyClass::Bool, "bSuccess", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventReadFloat_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bSuccess_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bSuccess,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Read a Float"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("get read receive"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Reads a float from the serial port (sent as 4 bytes).\n@param bSuccess True if there were 4 bytes to read.\n@return The read value"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Read a Float" },
+				{ "keywords", "get read receive" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Reads a float from the serial port (sent as 4 bytes).\n@param bSuccess True if there were 4 bytes to read.\n@return The read value" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "ReadFloat", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04420401, sizeof(Serial_eventReadFloat_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -583,24 +653,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			bool bSuccess;
 			int32 ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReadInt"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04420401, 65535, sizeof(Serial_eventReadInt_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventReadInt_Parms), 0x0010000000000580);
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bSuccess, Serial_eventReadInt_Parms);
-			UProperty* NewProp_bSuccess = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bSuccess"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bSuccess, Serial_eventReadInt_Parms), 0x0010000000000180, CPP_BOOL_PROPERTY_BITMASK(bSuccess, Serial_eventReadInt_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Int, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventReadInt_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_bSuccess_SetBit = [](void* Obj){ ((Serial_eventReadInt_Parms*)Obj)->bSuccess = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bSuccess = { UE4CodeGen_Private::EPropertyClass::Bool, "bSuccess", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventReadInt_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bSuccess_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bSuccess,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Read an Int"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("get read receive integer"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Reads an integer from the serial port (sent as 4 bytes).\n@param bSuccess True if there were 4 bytes to read.\n@return The read value"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Read an Int" },
+				{ "keywords", "get read receive integer" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Reads an integer from the serial port (sent as 4 bytes).\n@param bSuccess True if there were 4 bytes to read.\n@return The read value" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "ReadInt", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04420401, sizeof(Serial_eventReadInt_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -611,24 +684,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			bool bSuccess;
 			FString ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Readln"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04420401, 65535, sizeof(Serial_eventReadln_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventReadln_Parms), 0x0010000000000580);
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bSuccess, Serial_eventReadln_Parms);
-			UProperty* NewProp_bSuccess = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bSuccess"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bSuccess, Serial_eventReadln_Parms), 0x0010000000000180, CPP_BOOL_PROPERTY_BITMASK(bSuccess, Serial_eventReadln_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Str, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventReadln_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_bSuccess_SetBit = [](void* Obj){ ((Serial_eventReadln_Parms*)Obj)->bSuccess = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bSuccess = { UE4CodeGen_Private::EPropertyClass::Bool, "bSuccess", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventReadln_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bSuccess_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bSuccess,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Read Line"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("get read receive string words text characters"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Will read characters from Serial port until \\r\\n (Arduino println line end) is found.\n\n@param bSuccess If there was anything to read.\n@return The read string"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Read Line" },
+				{ "keywords", "get read receive string words text characters" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Will read characters from Serial port until \\r\\n (Arduino println line end) is found.\n\n@param bSuccess If there was anything to read.\n@return The read string" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "Readln", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04420401, sizeof(Serial_eventReadln_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -639,24 +715,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			bool bSuccess;
 			FString ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReadString"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04420401, 65535, sizeof(Serial_eventReadString_Parms));
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(ReturnValue, Serial_eventReadString_Parms), 0x0010000000000580);
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bSuccess, Serial_eventReadString_Parms);
-			UProperty* NewProp_bSuccess = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bSuccess"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bSuccess, Serial_eventReadString_Parms), 0x0010000000000180, CPP_BOOL_PROPERTY_BITMASK(bSuccess, Serial_eventReadString_Parms), sizeof(bool), true);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			static const UE4CodeGen_Private::FStrPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Str, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, STRUCT_OFFSET(Serial_eventReadString_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+			auto NewProp_bSuccess_SetBit = [](void* Obj){ ((Serial_eventReadString_Parms*)Obj)->bSuccess = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bSuccess = { UE4CodeGen_Private::EPropertyClass::Bool, "bSuccess", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000180, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventReadString_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_bSuccess_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_bSuccess,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Read String"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("get read receive string words text characters"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Will read characters from Serial port until \\0 (null char) is found or there are no\ncharacters left to read.\n\n@param bSuccess If there was anything to read.\n@return The read string"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Read String" },
+				{ "keywords", "get read receive string words text characters" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Will read characters from Serial port until \\0 (null char) is found or there are no\ncharacters left to read.\n\n@param bSuccess If there was anything to read.\n@return The read string" },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "ReadString", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04420401, sizeof(Serial_eventReadString_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -667,24 +746,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			uint8 Value;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("WriteByte"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventWriteByte_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventWriteByte_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventWriteByte_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventWriteByte_Parms), sizeof(bool), true);
-			UProperty* NewProp_Value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Value"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(CPP_PROPERTY_BASE(Value, Serial_eventWriteByte_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventWriteByte_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventWriteByte_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_Value = { UE4CodeGen_Private::EPropertyClass::Byte, "Value", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventWriteByte_Parms, Value), nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Value,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Write a Byte"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("send"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Writes a byte value to the serial port.\n@param Value The value to be sent to the serial port.\n@return True if the byte was sent."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Write a Byte" },
+				{ "keywords", "send" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Writes a byte value to the serial port.\n@param Value The value to be sent to the serial port.\n@return True if the byte was sent." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "WriteByte", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventWriteByte_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -695,25 +777,29 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			TArray<uint8> Buffer;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("WriteBytes"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventWriteBytes_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventWriteBytes_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventWriteBytes_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventWriteBytes_Parms), sizeof(bool), true);
-			UProperty* NewProp_Buffer = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Buffer"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(Buffer, Serial_eventWriteBytes_Parms), 0x0010000000000080);
-			UProperty* NewProp_Buffer_Inner = new(EC_InternalUseOnlyConstructor, NewProp_Buffer, TEXT("Buffer"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventWriteBytes_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventWriteBytes_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Buffer = { UE4CodeGen_Private::EPropertyClass::Array, "Buffer", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventWriteBytes_Parms, Buffer), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_Buffer_Inner = { UE4CodeGen_Private::EPropertyClass::Byte, "Buffer", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Buffer,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Buffer_Inner,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Write Bytes"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("send"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Writes a byte array as a sequence of bytes to the serial port.\n@param Buffer The byte array to be sent to the serial port.\n@return True if the bytes were sent."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Write Bytes" },
+				{ "keywords", "send" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Writes a byte array as a sequence of bytes to the serial port.\n@param Buffer The byte array to be sent to the serial port.\n@return True if the bytes were sent." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "WriteBytes", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventWriteBytes_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -724,24 +810,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			float Value;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("WriteFloat"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventWriteFloat_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventWriteFloat_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventWriteFloat_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventWriteFloat_Parms), sizeof(bool), true);
-			UProperty* NewProp_Value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Value"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(Value, Serial_eventWriteFloat_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventWriteFloat_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventWriteFloat_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Value = { UE4CodeGen_Private::EPropertyClass::Float, "Value", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventWriteFloat_Parms, Value), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Value,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Write a Float"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("send"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Writes a float value to the serial port as 4 bytes.\n@param Value The value to be sent to the serial port.\n@return True if the bytes were sent."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Write a Float" },
+				{ "keywords", "send" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Writes a float value to the serial port as 4 bytes.\n@param Value The value to be sent to the serial port.\n@return True if the bytes were sent." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "WriteFloat", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventWriteFloat_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -752,24 +841,27 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 			int32 Value;
 			bool ReturnValue;
 		};
-		UObject* Outer = Z_Construct_UClass_USerial();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("WriteInt"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(Serial_eventWriteInt_Parms));
-			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Serial_eventWriteInt_Parms);
-			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Serial_eventWriteInt_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Serial_eventWriteInt_Parms), sizeof(bool), true);
-			UProperty* NewProp_Value = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Value"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(Value, Serial_eventWriteInt_Parms), 0x0010000000000080);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
+			auto NewProp_ReturnValue_SetBit = [](void* Obj){ ((Serial_eventWriteInt_Parms*)Obj)->ReturnValue = 1; };
+			static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Bool, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000580, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(Serial_eventWriteInt_Parms), &UE4CodeGen_Private::TBoolSetBitWrapper<decltype(NewProp_ReturnValue_SetBit)>::SetBit, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FIntPropertyParams NewProp_Value = { UE4CodeGen_Private::EPropertyClass::Int, "Value", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000080, 1, nullptr, STRUCT_OFFSET(Serial_eventWriteInt_Parms, Value), METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_ReturnValue,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_Value,
+			};
 #if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UE4Duino"));
-			MetaData->SetValue(ReturnFunction, TEXT("DisplayName"), TEXT("Write an Int"));
-			MetaData->SetValue(ReturnFunction, TEXT("keywords"), TEXT("integer send"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Writes an integer value to the serial port as 4 bytes.\n@param Value The value to be sent to the serial port.\n@return True if the bytes were sent."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "Category", "UE4Duino" },
+				{ "DisplayName", "Write an Int" },
+				{ "keywords", "integer send" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Writes an integer value to the serial port as 4 bytes.\n@param Value The value to be sent to the serial port.\n@return True if the bytes were sent." },
+			};
 #endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_USerial, "WriteInt", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x04020401, sizeof(Serial_eventWriteInt_Parms), PropPointers, ARRAY_COUNT(PropPointers), 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -779,92 +871,83 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_Static
 	}
 	UClass* Z_Construct_UClass_USerial()
 	{
-		static UClass* OuterClass = NULL;
+		static UClass* OuterClass = nullptr;
 		if (!OuterClass)
 		{
-			Z_Construct_UClass_UObject();
-			Z_Construct_UPackage__Script_UE4Duino();
-			OuterClass = USerial::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= (EClassFlags)0x20000080u;
-
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_BytesToFloat());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_BytesToInt());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_Close());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_FloatToBytes());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_Flush());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_GetBaud());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_GetPort());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_IntToBytes());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_IsOpened());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_LineEndToStr());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_Open());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_OpenComPort());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_Print());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_Println());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_ReadByte());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_ReadBytes());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_ReadFloat());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_ReadInt());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_Readln());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_ReadString());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_WriteByte());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_WriteBytes());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_WriteFloat());
-				OuterClass->LinkChild(Z_Construct_UFunction_USerial_WriteInt());
-
-				UProperty* NewProp_WriteLineEnd = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("WriteLineEnd"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(WriteLineEnd, USerial), 0x0010000000000004, Z_Construct_UEnum_UE4Duino_ELineEnd());
-				UProperty* NewProp_WriteLineEnd_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_WriteLineEnd, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_BytesToFloat(), "BytesToFloat"); // 2364652256
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_BytesToInt(), "BytesToInt"); // 3317799230
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_Close(), "Close"); // 2490858217
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_FloatToBytes(), "FloatToBytes"); // 4237175022
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_Flush(), "Flush"); // 3713682756
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_GetBaud(), "GetBaud"); // 2977074836
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_GetPort(), "GetPort"); // 654658125
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_IntToBytes(), "IntToBytes"); // 1804991056
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_IsOpened(), "IsOpened"); // 3862235558
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_LineEndToStr(), "LineEndToStr"); // 3653838480
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_Open(), "Open"); // 1230166260
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_OpenComPort(), "OpenComPort"); // 132146337
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_Print(), "Print"); // 1581006432
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_Println(), "Println"); // 2011764214
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_ReadByte(), "ReadByte"); // 2293201984
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_ReadBytes(), "ReadBytes"); // 1507513963
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_ReadFloat(), "ReadFloat"); // 4189686530
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_ReadInt(), "ReadInt"); // 1918679648
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_Readln(), "Readln"); // 3474220420
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_ReadString(), "ReadString"); // 3337975668
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_WriteByte(), "WriteByte"); // 3872852098
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_WriteBytes(), "WriteBytes"); // 2879368508
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_WriteFloat(), "WriteFloat"); // 436082562
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USerial_WriteInt(), "WriteInt"); // 3069713506
-				static TCppClassTypeInfo<TCppClassTypeTraits<USerial> > StaticCppClassTypeInfo;
-				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
-				OuterClass->StaticLink();
+			static UObject* (*const DependentSingletons[])() = {
+				(UObject* (*)())Z_Construct_UClass_UObject,
+				(UObject* (*)())Z_Construct_UPackage__Script_UE4Duino,
+			};
+			static const FClassFunctionLinkInfo FuncInfo[] = {
+				{ &Z_Construct_UFunction_USerial_BytesToFloat, "BytesToFloat" }, // 2600990151
+				{ &Z_Construct_UFunction_USerial_BytesToInt, "BytesToInt" }, // 2023315162
+				{ &Z_Construct_UFunction_USerial_Close, "Close" }, // 3023443249
+				{ &Z_Construct_UFunction_USerial_FloatToBytes, "FloatToBytes" }, // 2366383527
+				{ &Z_Construct_UFunction_USerial_Flush, "Flush" }, // 467310895
+				{ &Z_Construct_UFunction_USerial_GetBaud, "GetBaud" }, // 2170232806
+				{ &Z_Construct_UFunction_USerial_GetPort, "GetPort" }, // 2197538864
+				{ &Z_Construct_UFunction_USerial_IntToBytes, "IntToBytes" }, // 1792410972
+				{ &Z_Construct_UFunction_USerial_IsOpened, "IsOpened" }, // 4078946347
+				{ &Z_Construct_UFunction_USerial_LineEndToStr, "LineEndToStr" }, // 4091742660
+				{ &Z_Construct_UFunction_USerial_Open, "Open" }, // 1928234931
+				{ &Z_Construct_UFunction_USerial_OpenComPort, "OpenComPort" }, // 4192005959
+				{ &Z_Construct_UFunction_USerial_Print, "Print" }, // 2843951264
+				{ &Z_Construct_UFunction_USerial_Println, "Println" }, // 1667278490
+				{ &Z_Construct_UFunction_USerial_ReadByte, "ReadByte" }, // 1605546699
+				{ &Z_Construct_UFunction_USerial_ReadBytes, "ReadBytes" }, // 658703939
+				{ &Z_Construct_UFunction_USerial_ReadFloat, "ReadFloat" }, // 963916366
+				{ &Z_Construct_UFunction_USerial_ReadInt, "ReadInt" }, // 1397283046
+				{ &Z_Construct_UFunction_USerial_Readln, "Readln" }, // 1685548859
+				{ &Z_Construct_UFunction_USerial_ReadString, "ReadString" }, // 1291056087
+				{ &Z_Construct_UFunction_USerial_WriteByte, "WriteByte" }, // 299607940
+				{ &Z_Construct_UFunction_USerial_WriteBytes, "WriteBytes" }, // 1543201556
+				{ &Z_Construct_UFunction_USerial_WriteFloat, "WriteFloat" }, // 3547159287
+				{ &Z_Construct_UFunction_USerial_WriteInt, "WriteInt" }, // 3874689816
+			};
 #if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("BlueprintType"), TEXT("true"));
-				MetaData->SetValue(OuterClass, TEXT("Category"), TEXT("UE4Duino"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Serial.h"));
-				MetaData->SetValue(OuterClass, TEXT("Keywords"), TEXT("com arduino serial"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-				MetaData->SetValue(NewProp_WriteLineEnd, TEXT("Category"), TEXT("UE4Duino | String"));
-				MetaData->SetValue(NewProp_WriteLineEnd, TEXT("ModuleRelativePath"), TEXT("Private/Serial.h"));
-				MetaData->SetValue(NewProp_WriteLineEnd, TEXT("ToolTip"), TEXT("Determines the line ending used when writing lines to serial port with PrintLine."));
+			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+				{ "BlueprintType", "true" },
+				{ "Category", "UE4Duino" },
+				{ "IncludePath", "Serial.h" },
+				{ "Keywords", "com arduino serial" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+			};
 #endif
-			}
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WriteLineEnd_MetaData[] = {
+				{ "Category", "UE4Duino | String" },
+				{ "ModuleRelativePath", "Private/Serial.h" },
+				{ "ToolTip", "Determines the line ending used when writing lines to serial port with PrintLine." },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumPropertyParams NewProp_WriteLineEnd = { UE4CodeGen_Private::EPropertyClass::Enum, "WriteLineEnd", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000004, 1, nullptr, STRUCT_OFFSET(USerial, WriteLineEnd), Z_Construct_UEnum_UE4Duino_ELineEnd, METADATA_PARAMS(NewProp_WriteLineEnd_MetaData, ARRAY_COUNT(NewProp_WriteLineEnd_MetaData)) };
+			static const UE4CodeGen_Private::FBytePropertyParams NewProp_WriteLineEnd_Underlying = { UE4CodeGen_Private::EPropertyClass::Byte, "UnderlyingType", RF_Public|RF_Transient|RF_MarkAsNative, 0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_WriteLineEnd,
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_WriteLineEnd_Underlying,
+			};
+			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
+				TCppClassTypeTraits<USerial>::IsAbstract,
+			};
+			static const UE4CodeGen_Private::FClassParams ClassParams = {
+				&USerial::StaticClass,
+				DependentSingletons, ARRAY_COUNT(DependentSingletons),
+				0x00000080u,
+				FuncInfo, ARRAY_COUNT(FuncInfo),
+				PropPointers, ARRAY_COUNT(PropPointers),
+				nullptr,
+				&StaticCppClassTypeInfo,
+				nullptr, 0,
+				METADATA_PARAMS(Class_MetaDataParams, ARRAY_COUNT(Class_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUClass(OuterClass, ClassParams);
 		}
-		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USerial, 2215956709);
+	IMPLEMENT_CLASS(USerial, 2403576729);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_USerial(Z_Construct_UClass_USerial, &USerial::StaticClass, TEXT("/Script/UE4Duino"), TEXT("USerial"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(USerial);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)
 #endif
-PRAGMA_ENABLE_OPTIMIZATION
