@@ -1,3 +1,8 @@
 version https://git-lfs.github.com/spec/v1
+<<<<<<< HEAD
 oid sha256:7e2cfca98a6dbc823909d4f3bb2ddb72ce31b18bb2d1afa09ad4213c141e3734
 size 9731734
+=======
+oid sha256:bea50a01affa39503fd426fa8f7fcedf3872fd20938bfe9c546135e299d4e6f7
+size 9596650
+>>>>>>> origin/yann_rollback_parce_que_ca_compile_pas
